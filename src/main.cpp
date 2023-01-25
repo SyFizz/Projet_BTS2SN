@@ -50,6 +50,7 @@ void groupButtonPressed() {
 // Fonction d'interruption déclenchée par le bouton d'info
 void modeButtonPressed() {
   if(modeButtonLastPressed + buttonsDebounceDelay < millis()) { //Si le délai de rebond est dépassé
+  selectedMode = modeForGroup[selectedGroup]; //On récupère le mode du groupe sélectionné
     selectedMode++; //On passe au mode suivant
     if (selectedMode > 3) {
       selectedMode = 0; //On revient au mode 0 si on dépasse le mode 3
